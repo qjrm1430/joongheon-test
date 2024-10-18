@@ -1,11 +1,13 @@
 from collections import deque
 
 def solution(n):
-    answer = 0
+    answer = 1
     lst = deque()
     current_sum = 0
     # 1부터 n까지의 자연수를 순회
-    for i in range(1, n + 1):
+    if n == 2 or n == 1:
+        return answer
+    for i in range(1, n//2+2):
         lst.append(i)
         current_sum += i
         # 현재 합이 n보다 클 경우, 앞에서부터 값을 제거
